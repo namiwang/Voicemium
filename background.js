@@ -6,10 +6,16 @@ function setStopIcon() {
   chrome.browserAction.setIcon({ path: "stop.png" });
 }
 
-function main(tab){
+chrome.browserAction.onClicked.addListener(function (tab) {
   chrome.tabs.sendMessage(tab.id, {action: 'go'}, function(response) {
-    //console.log(response.farewell);
   });
-}
+});
 
-chrome.browserAction.onClicked.addListener(main);
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  action = {recognized: function () {
+    alert('get script: ' + request.transcript);
+    chrome.tabs.sendMessage(sender.tab.id, {action: 'gotCommand', command: request.transcript}, function (response) {
+    });
+  }};
+  action[request.action]();
+});
