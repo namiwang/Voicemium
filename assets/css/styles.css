@@ -1,4 +1,13 @@
 #voicemium-message{
   z-index: 65536;
-  
+  position: absolute;
+  padding: 20px;
+  width: 200px;
+  left: 50%;
+  margin-left: -100px;
+  border: 1px black solid;
+  background-color: white;
+  text-align: center;
+  display: none;
+  font-size: 2em;
 }

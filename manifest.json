@@ -10,7 +10,7 @@
     "default_title": "Voicemium"
   },
   "permissions" : [
-    "tabs", "*://*/*", "file:///*"
+    "tabs"
   ],
   "background": {
     "page": "background.html"

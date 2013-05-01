@@ -7,7 +7,7 @@ function setStopIcon() {
 }
 
 function main(tab){
-  chrome.tabs.sendMessage(tab.id, {action: 'go'}, function(response) {
+  chrome.tabs.sendMessage(tab.id, {action: 'gotCommand', command: 'links'}, function(response) {
     //console.log(response.farewell);
   });
 }
