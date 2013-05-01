@@ -1,0 +1,1 @@
+1. chk if jquery already load in original page
