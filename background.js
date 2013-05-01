@@ -6,7 +6,10 @@ function setStopIcon() {
   chrome.browserAction.setIcon({ path: "stop.png" });
 }
 
-function main(tabs.Tab tab){
+function main(tab){
+  chrome.tabs.sendMessage(tab.id, {action: 'go'}, function(response) {
+    //console.log(response.farewell);
+  });
 }
 
 chrome.browserAction.onClicked.addListener(main);

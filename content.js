@@ -1,5 +1,12 @@
+function showMessageDiv(){
+  var div = document.createElement("div");
+  div.setAttribute("id", "voicemium-message");
+  $("body").prepend(div);
+}
+
 function onMessage(request, sender, sendResponse) {
+  showMessageDiv();
   sendResponse({});
 }
 
-chrome.extension.onMessage.addListener(onMessage);
+chrome.runtime.onMessage.addListener(onMessage);
